@@ -1,0 +1,13 @@
+{
+  "name": "hansys-resort",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "test": "node --test tests/*.test.js",
+    "check": "node --check src/main.js && node --check src/dialogs.js && node --check src/icons.js && node --check src/stays.js && node --check src/booking.js && node --check server.js && node --check scripts/build.js",
+    "build": "node scripts/build.js"
+  }
+}

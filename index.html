@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ff5a5f" />
+    <meta
+      name="description"
+      content="Meet Hansy's Resort: a little escape, a lot to love. Explore our tropical resort concept, sample stays, and island-inspired experiences."
+    />
+    <title>Hansy's Resort · A little escape. A lot to love.</title>
+    <link rel="icon" type="image/svg+xml" href="/public/favicon.svg" />
+    <link rel="stylesheet" href="/src/styles.css" />
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header wrap">
+      <a class="brand" href="#" aria-label="Hansy's Resort home"
+        ><svg viewBox="0 0 40 40" aria-hidden="true">
+          <circle cx="20" cy="20" r="7" />
+          <path
+            d="M20 2v5m0 26v5M2 20h5m26 0h5M7 7l4 4m18 18 4 4M7 33l4-4m18-18 4-4"
+          /></svg
+        ><span>hansy’s<span class="brand-sub">RESORT & RETREATS</span></span></a
+      >
+      <nav aria-label="Main navigation">
+        <a class="nav-active" href="#resort">The resort</a
+        ><a href="#stays">Our stays</a><a href="#experiences">Experiences</a>
+      </nav>
+      <div class="header-actions">
+        <button class="saved-button" id="show-saved">
+          <span data-icon="heart"></span
+          ><span>Saved<span id="saved-count"></span></span></button
+        ><a class="button primary small" href="#booking"
+          >Plan your stay <span data-icon="arrow-right"></span
+        ></a>
+      </div>
+    </header>
+    <main id="main">
+      <section
+        class="hero-shell"
+        id="resort"
+        aria-label="Welcome to Hansy's Resort"
+      >
+        <div class="hero">
+          <img
+            class="hero-photo"
+            src="/public/images/hero-coast.png"
+            alt="Illustrative tropical resort with an infinity pool overlooking the sea and palm trees"
+            fetchpriority="high"
+          />
+          <div class="hero-shade"></div>
+          <div class="hero-copy">
+            <h1>A little escape.<br />A lot to love.</h1>
+            <p>
+              Leave the everyday behind.<br />Find your happy place at Hansy’s.
+            </p>
+            <a class="hero-link" href="#stays"
+              >Your next slow day starts here
+              <span data-icon="arrow-right"></span
+            ></a>
+          </div>
+          <span class="slow-days"
+            ><span data-icon="sun"></span> Made for slow days</span
+          >
+          <button class="photo-button" id="open-gallery">
+            <span data-icon="grid"></span> Explore the resort
+          </button>
+        </div>
+        <form class="search-bar" id="booking">
+          <label class="search-field stay-field"
+            ><span data-icon="bed"></span
+            ><span
+              ><span class="field-label">Your stay</span
+              ><select id="stay-type" aria-label="Stay type">
+                <option value="all">Any stay type</option>
+                <option value="beachfront">Beachfront</option>
+                <option value="poolside">Poolside</option>
+                <option value="family">For families</option>
+                <option value="garden">Garden stay</option>
+              </select></span
+            ></label
+          >
+          <label class="search-field"
+            ><span data-icon="calendar"></span
+            ><span
+              ><span class="field-label">Check in</span
+              ><input
+                aria-label="Check in"
+                id="check-in"
+                type="date"
+                required /></span
+          ></label>
+          <label class="search-field"
+            ><span data-icon="calendar"></span
+            ><span
+              ><span class="field-label">Check out</span
+              ><input
+                aria-label="Check out"
+                id="check-out"
+                type="date"
+                required /></span
+          ></label>
+          <label class="search-field guest-field"
+            ><span data-icon="users"></span
+            ><span
+              ><span class="field-label">Guests</span
+              ><select id="guests" aria-label="Guests">
+                <option value="1">1 guest</option>
+                <option value="2" selected>2 guests</option>
+                <option value="3">3 guests</option>
+                <option value="4">4 guests</option>
+                <option value="5">5 guests</option>
+                <option value="6">6 guests</option>
+                <option value="7">7 guests</option>
+                <option value="8">8 guests</option>
+                <option value="9">9 guests</option>
+                <option value="10">10 guests</option>
+                <option value="11">11 guests</option>
+                <option value="12">12 guests</option>
+              </select></span
+            ></label
+          >
+          <button class="button primary search-submit" type="submit">
+            <span data-icon="search"></span> Search stays
+          </button>
+        </form>
+        <p class="search-error" id="search-error" role="alert"></p>
+      </section>
+
+      <section
+        class="stays-section wrap"
+        id="stays"
+        aria-labelledby="stays-title"
+      >
+        <div class="section-heading">
+          <div>
+            <h2 id="stays-title">Find your kind of paradise</h2>
+            <p>Thoughtfully made spaces. Unforgettable island days.</p>
+          </div>
+          <span class="sample-label">Sample stays & rates</span>
+        </div>
+        <div class="browse-controls">
+          <div
+            class="categories"
+            role="group"
+            aria-label="Filter stays by type"
+          >
+            <button
+              class="category active"
+              data-category="all"
+              aria-pressed="true"
+            >
+              <span data-icon="grid"></span>All stays</button
+            ><button
+              class="category"
+              data-category="beachfront"
+              aria-pressed="false"
+            >
+              <span data-icon="waves"></span>Beachfront</button
+            ><button
+              class="category"
+              data-category="poolside"
+              aria-pressed="false"
+            >
+              <span data-icon="pool"></span>Poolside</button
+            ><button
+              class="category"
+              data-category="family"
+              aria-pressed="false"
+            >
+              <span data-icon="users"></span>For families</button
+            ><button
+              class="category"
+              data-category="garden"
+              aria-pressed="false"
+            >
+              <span data-icon="leaf"></span>Garden stays
+            </button>
+          </div>
+          <button class="filter-button" id="open-filters">
+            <span data-icon="sliders"></span>Filters<span
+              id="filter-count"
+            ></span>
+          </button>
+        </div>
+        <div class="results-meta" id="results-meta" aria-live="polite"></div>
+        <div class="stay-grid" id="stay-grid"></div>
+        <div class="empty-state" id="empty-state" hidden>
+          <span data-icon="search"></span>
+          <h3>A different kind of escape?</h3>
+          <p>No sample stays match these choices. Try another filter.</p>
+          <button class="button outline" id="reset-filters">
+            Reset filters
+          </button>
+        </div>
+        <div class="stay-note">
+          <span data-icon="sparkles"></span>
+          <p>A place to switch off. A stay to remember.</p>
+          <a href="#host"
+            >Get to know Hansy <span data-icon="arrow-right"></span
+          ></a>
+        </div>
+      </section>
+
+      <section
+        class="experience-section"
+        id="experiences"
+        aria-labelledby="experience-title"
+      >
+        <div class="wrap">
+          <div class="section-heading">
+            <div>
+              <h2 id="experience-title">Less planning. More living.</h2>
+              <p>The little things that make a getaway feel like a getaway.</p>
+            </div>
+            <span class="handwritten"
+              >Take it slow <span data-icon="sun"></span
+            ></span>
+          </div>
+          <div class="experience-grid">
+            <article>
+              <span class="amenity-icon" data-icon="waves"></span>
+              <h3>Salt in the air</h3>
+              <p>Beachside mornings and a little more time by the water.</p>
+            </article>
+            <article>
+              <span class="amenity-icon" data-icon="pool"></span>
+              <h3>Your pool-day era</h3>
+              <p>Sunny dips, a good book, and absolutely no rush.</p>
+            </article>
+            <article>
+              <span class="amenity-icon" data-icon="coffee"></span>
+              <h3>Slow morning rituals</h3>
+              <p>Fresh coffee, a quiet corner, and nowhere else to be.</p>
+            </article>
+            <article>
+              <span class="amenity-icon" data-icon="leaf"></span>
+              <h3>Room to reconnect</h3>
+              <p>Good company, open spaces, and the simple joys.</p>
+            </article>
+          </div>
+          <p class="concept-note">
+            An island-inspired concept. Amenities and experiences are
+            illustrative.
+          </p>
+        </div>
+      </section>
+
+      <section class="host-section wrap" id="host">
+        <div class="host-image">
+          <img
+            src="/public/images/host.jpg"
+            alt="Illustrative peaceful tropical resort lounge surrounded by greenery"
+            loading="lazy"
+          /><span class="image-caption">A slower state of mind.</span>
+        </div>
+        <div class="host-copy">
+          <span class="section-kicker">A WARM WELCOME</span>
+          <h2>A little personal.<br />Just like a good stay.</h2>
+          <p>
+            Hansy’s starts with a simple idea: the best getaways make you feel
+            right at home, even when you’re a world away from your routine.
+          </p>
+          <p>
+            Bring your favorite people. Leave a little room for doing nothing.
+            We’ll help you imagine the rest.
+          </p>
+          <a class="button dark" href="#booking"
+            >Make yourself at home <span data-icon="arrow-right"></span></a
+          ><span class="host-signature">See you on the slow side, Hansy</span>
+        </div>
+      </section>
+      <section class="closing-section wrap">
+        <span data-icon="sun"></span>
+        <div>
+          <h2>Your next good memory starts here.</h2>
+          <p>A few days away can make all the difference.</p>
+        </div>
+        <a class="button primary" href="#booking"
+          >Find your stay <span data-icon="arrow-right"></span
+        ></a>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="footer-top">
+          <a href="#" class="brand footer-brand"
+            >hansy’s<span>Good days. Great stays.</span></a
+          >
+          <nav aria-label="Footer navigation">
+            <a href="#resort">The resort</a><a href="#stays">Our stays</a
+            ><a href="#experiences">Experiences</a
+            ><button id="about-demo">About this preview</button>
+          </nav>
+          <span class="footer-location"
+            ><span data-icon="map-pin"></span> Inspired by the Philippines</span
+          >
+        </div>
+        <div class="footer-bottom">
+          <span>© <span id="year"></span> Hansy’s Resort · Website concept</span
+          ><span>Sample photos, rooms, and rates. No live reservations.</span
+          ><span>English · PHP ₱</span>
+        </div>
+      </div>
+    </footer>
+
+    <dialog id="filters-dialog" aria-labelledby="filters-title">
+      <div class="dialog-top">
+        <h2 id="filters-title">Make it your kind of stay</h2>
+        <button class="icon-button close-dialog" aria-label="Close filters">
+          <span data-icon="x"></span>
+        </button>
+      </div>
+      <form id="filter-form">
+        <p class="muted">Find a little space that feels just right.</p>
+        <label class="form-label" for="max-price"
+          >Maximum nightly rate <span id="price-output">₱10,000</span></label
+        ><input
+          id="max-price"
+          type="range"
+          min="3000"
+          max="10000"
+          value="10000"
+          step="500"
+        />
+        <div class="range-labels"><span>₱3,000</span><span>₱10,000</span></div>
+        <label class="checkbox-label"
+          ><input type="checkbox" id="saved-only" />Only show my saved
+          stays</label
+        >
+        <p class="fine-print">Rates are examples, not current offers.</p>
+        <div class="dialog-actions">
+          <button class="text-button" type="button" id="clear-filter-dialog">
+            Clear all</button
+          ><button class="button primary" type="submit">
+            Show stays <span data-icon="arrow-right"></span>
+          </button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog
+      id="stay-dialog"
+      class="large-dialog"
+      aria-labelledby="stay-dialog-title"
+    >
+      <div class="dialog-top">
+        <span class="sample-label">Sample accommodation</span
+        ><button
+          class="icon-button close-dialog"
+          aria-label="Close stay details"
+        >
+          <span data-icon="x"></span>
+        </button>
+      </div>
+      <div id="stay-detail"></div>
+    </dialog>
+    <dialog
+      id="gallery-dialog"
+      class="gallery-dialog"
+      aria-labelledby="gallery-title"
+    >
+      <div class="dialog-top">
+        <div>
+          <h2 id="gallery-title">A glimpse of the good life</h2>
+          <p class="muted">
+            Inspiration photos · not photos of Hansy’s property
+          </p>
+        </div>
+        <button
+          class="icon-button close-dialog"
+          aria-label="Close photo gallery"
+        >
+          <span data-icon="x"></span>
+        </button>
+      </div>
+      <div class="gallery-grid" id="gallery-grid"></div>
+    </dialog>
+    <dialog id="inquiry-dialog" aria-labelledby="inquiry-title">
+      <div class="dialog-top">
+        <h2 id="inquiry-title">Imagine your escape</h2>
+        <button class="icon-button close-dialog" aria-label="Close inquiry">
+          <span data-icon="x"></span>
+        </button>
+      </div>
+      <p class="muted">Choose your dates to prepare a sample stay inquiry.</p>
+      <form id="inquiry-form">
+        <input type="hidden" id="inquiry-stay" />
+        <div class="form-two-col">
+          <label class="form-label"
+            >Check in<input type="date" id="inquiry-in" required /></label
+          ><label class="form-label"
+            >Check out<input type="date" id="inquiry-out" required
+          /></label>
+        </div>
+        <label class="form-label"
+          >Guests<input
+            type="number"
+            min="1"
+            max="12"
+            id="inquiry-guests"
+            value="2"
+            required
+        /></label>
+        <p class="form-error" id="inquiry-error" role="alert"></p>
+        <button class="button primary full-width" type="submit">
+          Preview my stay <span data-icon="arrow-right"></span>
+        </button>
+      </form>
+      <div id="inquiry-summary" hidden></div>
+      <p class="fine-print demo-disclosure">
+        This is a website preview. No availability is checked, no inquiry is
+        sent, and no booking is made.
+      </p>
+    </dialog>
+    <dialog id="about-dialog" aria-labelledby="about-title">
+      <div class="dialog-top">
+        <h2 id="about-title">A little note about this site</h2>
+        <button
+          class="icon-button close-dialog"
+          aria-label="Close preview information"
+        >
+          <span data-icon="x"></span>
+        </button>
+      </div>
+      <p>
+        This is a design concept for Hansy’s Resort. Photos, accommodations,
+        amenities, and rates are illustrative and need to be replaced with
+        verified property details before launch.
+      </p>
+      <p>
+        The stay planner creates a local inquiry summary. It does not check
+        availability, contact the resort, accept payments, or make reservations.
+      </p>
+      <p>Saved stays are stored only in this browser.</p>
+    </dialog>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
