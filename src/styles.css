@@ -801,6 +801,79 @@ h2 {
   color: #838977;
   margin-top: 21px;
 }
+.reviews-section {
+  padding-bottom: 60px;
+}
+.reviews-disclosure {
+  margin: 16px 0 25px;
+  color: var(--muted);
+  font-size: 11px;
+}
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+.review-card {
+  padding: 25px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+}
+.review-person {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+.review-avatar {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #edf0e5;
+  color: #657359;
+  font-size: 13px;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+.review-avatar.peach {
+  background: #fbece4;
+  color: #a66c53;
+}
+.review-avatar.blue {
+  background: #e8f0f2;
+  color: #527782;
+}
+.review-person h3 {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 2px;
+}
+.review-person > div > span,
+.review-stay {
+  font-size: 10px;
+  color: var(--muted);
+}
+.review-stars {
+  color: var(--coral-dark);
+  font-size: 15px;
+  letter-spacing: 2px;
+  margin-top: 19px;
+}
+.review-stars .empty-star {
+  color: #a9a9a5;
+}
+.review-card blockquote {
+  margin: 12px 0 21px;
+  font-size: 13px;
+  line-height: 1.85;
+  color: #5f6264;
+}
+.review-stay {
+  margin-top: auto;
+}
 .closing-section {
   display: flex;
   align-items: center;
@@ -1234,6 +1307,13 @@ input[type="range"] {
   }
 }
 @media (max-width: 800px) {
+  .reviews-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  .review-card {
+    padding: 23px;
+  }
   .site-header {
     height: 82px;
   }
@@ -1408,6 +1488,18 @@ input[type="range"] {
   }
 }
 @media (max-width: 540px) {
+  .reviews-section {
+    padding-bottom: 38px;
+  }
+  .reviews-section .section-heading {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .reviews-disclosure {
+    font-size: 10px;
+    line-height: 1.7;
+    margin-top: 12px;
+  }
   .wrap {
     width: calc(100% - 40px);
   }
